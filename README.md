@@ -186,7 +186,7 @@ The tool provides visualization outputs with detailed analysis capabilities:
 
 ---
 
-### Mathematical Foundations of Cell Type Gradients
+## Mathematical Foundations of Cell Type Gradients
 
 <div align="center">
 <img src="Documentation/Mathematical_Foundations_of_CellType_Gradients.jpg" alt="Mathematical Foundations of Cell Type Gradients" width="1000"/>
