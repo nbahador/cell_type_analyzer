@@ -1,6 +1,10 @@
 # Cell Type Inference from 2D Fluorescent Brain Images
 
-A Python-based machine learning pipeline for direct cell type inference from 2D fluorescent brain images using Vision Transformer and spatial transcriptomic mapping.
+A Python-based machine learning pipeline for direct cell type inference from 2D fluorescent brain images using Vision Transformer and spatial mapping.
+
+<td width="70%" align="center">
+<img src="Documentation/UI_Interface/UI_Distribution.jpg" alt="Distribution Analysis" width="400"/>
+</td>
 
 ---
 
@@ -40,11 +44,11 @@ Vision Transformer (ViT) for advanced feature extraction from fluorescent brain 
 </td>
 <td width="33%" align="center">
 <h3>📊 Data Analysis</h3>
-UMAP, t-SNE, K-Means clustering, and Kernel Density Estimation for comprehensive analysis
+UMAP, K-Means clustering, and Kernel Density Estimation for analysis
 </td>
 <td width="33%" align="center">
 <h3>🎯 Prediction</h3>
-Gradient Boosting Regressor for accurate cell type distribution prediction
+Gradient Boosting Regressor for cell type distribution prediction
 </td>
 </tr>
 </table>
@@ -53,7 +57,7 @@ Gradient Boosting Regressor for accurate cell type distribution prediction
 The core functionality includes:
 - Extracting and encoding features from 2D fluorescent images
 - Predicting cell type distributions using supervised learning
-- Visualizing results through intuitive plots and embeddings
+- Visualizing results through plots and embeddings
 
 [↑ Back to Table of Contents](#-table-of-contents)
 
@@ -61,7 +65,7 @@ The core functionality includes:
 
 ## Architecture
 
-The pipeline leverages a pre-trained Vision Transformer (ViT) for deep feature extraction from input images. These features are then processed using dimensionality reduction methods such as UMAP and t-SNE to reveal structure in the data. For clustering and density analysis, the tool uses K-Means, Convex Hulls, and Kernel Density Estimation (KDE). A Gradient Boosting Regressor is employed to predict the distribution of cell types in new images based on learned patterns from the training set.
+The pipeline leverages a pre-trained Vision Transformer (ViT) for deep feature extraction from input images. These features are then processed using dimensionality reduction methods such as UMAP to reveal structure in the data. For clustering and density analysis, the tool uses K-Means, Convex Hulls, and Kernel Density Estimation (KDE). A Gradient Boosting Regressor is employed to predict the distribution of cell types in new images based on learned patterns from the training set.
 
 [↑ Back to Table of Contents](#-table-of-contents)
 
@@ -69,7 +73,7 @@ The pipeline leverages a pre-trained Vision Transformer (ViT) for deep feature e
 
 ## User Interface
 
-The tool provides an intuitive web-based interface for seamless interaction:
+The tool also provides a user interface for interaction:
 
 <div align="center">
 <table>
@@ -77,17 +81,17 @@ The tool provides an intuitive web-based interface for seamless interaction:
 <td width="33%" align="center">
 <img src="Documentation/UI_Interface/UI_upload.jpg" alt="Upload Interface" width="300"/>
 <br><strong>Upload Interface</strong>
-<br>Easy image upload functionality
+<br>Image upload functionality
 </td>
 <td width="33%" align="center">
 <img src="Documentation/UI_Interface/UI_Prediction.jpg" alt="Prediction Interface" width="300"/>
 <br><strong>Prediction Results</strong>
-<br>Real-time cell type predictions
+<br>Cell type predictions
 </td>
 <td width="33%" align="center">
 <img src="Documentation/UI_Interface/UI_Distribution.jpg" alt="Distribution Interface" width="300"/>
 <br><strong>Distribution Analysis</strong>
-<br>Comprehensive cell type distribution visualization
+<br>cell type distribution visualization
 </td>
 </tr>
 </table>
@@ -117,7 +121,7 @@ The tool provides an intuitive web-based interface for seamless interaction:
 
 ## Output Visualizations
 
-The tool provides rich visualization outputs with detailed analysis capabilities:
+The tool provides visualization outputs with detailed analysis capabilities:
 
 ### 1. Cell Type Distance Matrix
 
@@ -135,7 +139,7 @@ The tool provides rich visualization outputs with detailed analysis capabilities
 <img src="Results/cell_type_gradients_results/all_cell_types_thumbnails_overview.png" alt="UMAP with Thumbnails" width="600"/>
 </div>
 
-**Description:** UMAP projection of cell type embeddings, overlaid with representative thumbnails for each population. This plot combines dimensionality reduction (UMAP) with sample thumbnails to contextualize cell type distributions. Thumbnails are small images (likely sagittal/coronal/axial views) that represent typical samples for each cell type. The plot provides visual validation of UMAP groupings—similar-looking samples should cluster together.
+**Description:** UMAP projection of cell type embeddings, overlaid with representative thumbnails for each population. This plot combines dimensionality reduction (UMAP) with sample thumbnails to contextualize cell type distributions. Thumbnails are small images that represent typical samples for each cell type. The plot provides visual validation of UMAP groupings—similar-looking samples should cluster together.
 
 [↑ Back to Table of Contents](#-table-of-contents)
 
@@ -164,7 +168,7 @@ The tool provides rich visualization outputs with detailed analysis capabilities
 </table>
 </div>
 
-**Description:** Predicted cell type distribution showing relative abundance across neuronal and non-neuronal populations. This visualization represents the model-predicted proportions of different cell types in a given sample or region. The hierarchical structure groups related cell types. The distribution highlights cortical cell type composition, sorted from major/dominant components.
+**Description:** Predicted cell type distribution showing relative abundance across populations. This visualization represents the model-predicted proportions of different cell types in a given sample or region. The hierarchical structure groups related cell types. The distribution highlights cortical cell type composition, sorted from dominant components.
 
 [↑ Back to Table of Contents](#-table-of-contents)
 
@@ -182,12 +186,8 @@ The tool provides rich visualization outputs with detailed analysis capabilities
 
 ## Acknowledgments
 
-The images and associated cell type annotations used to develop this tool were provided by the **Allen Institute** through the [MapMySections challenge](https://alleninstitute.github.io/MapMySections/). The tool provides side-by-side comparisons of predicted vs. average cell type distributions in similar images based on this comprehensive dataset.
+The images and associated cell type annotations used to develop this tool were provided by the **Allen Institute** through the [MapMySections challenge](https://alleninstitute.github.io/MapMySections/). The tool provides side-by-side comparisons of predicted vs. average cell type distributions in similar images based on this dataset.
 
 [↑ Back to Table of Contents](#-table-of-contents)
 
 ---
-
-<div align="center">
-<strong>🧬 Advancing Neuroscience Through Machine Learning 🧬</strong>
-</div>
