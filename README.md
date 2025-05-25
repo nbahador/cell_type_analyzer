@@ -21,6 +21,7 @@ A Python-based machine learning pipeline for direct cell type inference from 2D 
   - [Spatial Gradients](#3-spatial-gradients)
   - [Cell Type Distribution](#4-cell-type-distribution)
   - [Prediction Validation](#5-prediction-validation)
+- [Mathematical Foundations of Cell Type Gradients](#mathematical_foundations_of_celltype_gradients)
 - [Acknowledgments](#acknowledgments)
 - [Citation](#citation)
 
@@ -185,6 +186,16 @@ The tool provides visualization outputs with detailed analysis capabilities:
 
 ---
 
+### Mathematical Foundations of Cell Type Gradients
+
+<div align="center">
+<img src="Documentation/Mathematical_Foundations_of_CellType_Gradients.jpg" alt="Mathematical Foundations of Cell Type Gradients" width="1000"/>
+</div>
+
+[↑ Back to Table of Contents](#-table-of-contents)
+
+---
+
 ## Acknowledgments
 
 The images and associated cell type annotations used to develop this tool were provided by the **Allen Institute** through the [MapMySections challenge](https://alleninstitute.github.io/MapMySections/). The tool provides side-by-side comparisons of predicted vs. average cell type distributions in similar images based on this dataset.
@@ -204,3 +215,8 @@ If you use this tool in your research, please cite:
   url={https://github.com/nbahador/cell_type_analyzer.git},
   note={Python-based pipeline for direct cell type inference from 2D fluorescent brain images using Vision Transformer and spatial mapping}
 }
+```
+
+[↑ Back to Table of Contents](#-table-of-contents)
+
+---
