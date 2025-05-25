@@ -195,10 +195,13 @@ The images and associated cell type annotations used to develop this tool were p
 
 ## Citation
 If you use this tool in your research, please cite:
-bibtex@software{cell_type_inference_2d,
-  title={Cell Type Inference from 2D Fluorescent Brain Images},
-  author={Nooshin Bahador},
-  year={2025},
-  url={https://github.com/nbahador/cell_type_analyzer.git},
-  note={Python-based pipeline for direct cell type inference from 2D fluorescent brain images using Vision Transformer and spatial mapping}
+
+@software{cell_type_inference_2d,
+  title        = {Cell Type Inference from 2D Fluorescent Brain Images},
+  author       = {Nooshin Bahador},
+  year         = {2025},
+  url          = {https://github.com/nbahador/cell_type_analyzer.git},
+  note         = {Python-based pipeline for direct cell type inference from 2D fluorescent brain images using Vision Transformer and spatial mapping}
 }
+
+---
