@@ -3,7 +3,7 @@
 A Python-based machine learning pipeline for direct cell type inference from 2D fluorescent brain images using Vision Transformer and spatial mapping.
 
 <td width="100%" align="center">
-<img src="Documentation/UI_Interface/UI_Distribution.jpg" alt="Distribution Analysis" width="400"/>
+<img src="Documentation/UI_Interface/UI_Distribution.jpg" alt="Distribution Analysis" width="600"/>
 </td>
 
 ---
