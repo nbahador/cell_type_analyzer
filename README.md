@@ -136,7 +136,7 @@ The tool provides visualization outputs with detailed analysis capabilities:
 ### 2. UMAP Embeddings with Thumbnails
 
 <div align="center">
-<img src="Results/cell_type_gradients_results/all_cell_types_thumbnails_overview.png" alt="UMAP with Thumbnails" width="600"/>
+<img src="Results/cell_type_gradients_results/all_cell_types_thumbnails_overview.png" alt="UMAP with Thumbnails" width="800"/>
 </div>
 
 **Description:** UMAP projection of cell type embeddings, overlaid with representative thumbnails for each population. This plot combines dimensionality reduction (UMAP) with sample thumbnails to contextualize cell type distributions. Thumbnails are small images that represent typical samples for each cell type. The plot provides visual validation of UMAP groupings—similar-looking samples should cluster together.
