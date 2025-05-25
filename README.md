@@ -21,7 +21,7 @@ A Python-based machine learning pipeline for direct cell type inference from 2D 
   - [Spatial Gradients](#3-spatial-gradients)
   - [Cell Type Distribution](#4-cell-type-distribution)
   - [Prediction Validation](#5-prediction-validation)
-- [Mathematical Foundations of Cell Type Gradients](#mathematical_foundations_of_celltype_gradients)
+- [Mathematical Foundations of Cell Type Gradients](#mathematical_foundations_of_cell_type_gradients)
 - [Acknowledgments](#acknowledgments)
 - [Citation](#citation)
 
