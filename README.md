@@ -22,6 +22,7 @@ A Python-based machine learning pipeline for direct cell type inference from 2D 
   - [Cell Type Distribution](#4-cell-type-distribution)
   - [Prediction Validation](#5-prediction-validation)
 - [Acknowledgments](#acknowledgments)
+- [Citation](#citation)
 
 ---
 
@@ -191,3 +192,13 @@ The images and associated cell type annotations used to develop this tool were p
 [↑ Back to Table of Contents](#-table-of-contents)
 
 ---
+
+## Citation
+If you use this tool in your research, please cite:
+bibtex@software{cell_type_inference_2d,
+  title={Cell Type Inference from 2D Fluorescent Brain Images},
+  author={Nooshin Bahador},
+  year={2025},
+  url={https://github.com/nbahador/cell_type_analyzer.git},
+  note={Python-based pipeline for direct cell type inference from 2D fluorescent brain images using Vision Transformer and spatial mapping}
+}
