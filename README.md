@@ -108,7 +108,7 @@ The tool also provides a user interface for interaction:
 | Component | Technology | Purpose |
 |-----------|------------|---------|
 | **Feature Extraction** | Vision Transformer (ViT) | Extract deep features from fluorescent images |
-| **Dimensionality Reduction** | UMAP, t-SNE | Reveal data structure and patterns |
+| **Dimensionality Reduction** | UMAP | Reveal data structure and patterns |
 | **Clustering** | K-Means, Convex Hulls | Group similar cell types |
 | **Density Analysis** | Kernel Density Estimation | Analyze spatial distributions |
 | **Prediction** | Gradient Boosting Regressor | Predict cell type distributions |
