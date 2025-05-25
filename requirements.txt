@@ -1,0 +1,14 @@
+﻿torch
+transformers
+numpy
+pandas
+matplotlib
+Pillow
+scikit-learn
+requests
+umap-learn
+seaborn
+scipy
+openpyxl
+SimpleITK
+PyQt5

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Foundations of Cell Type Gradients</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --success: #4cc9f0;
+            --warning: #f8961e;
+            --dark: #212529;
+            --light: #f8f9fa;
+            --bg-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            --card-bg: #ffffff;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 15px;
+            color: var(--dark);
+            line-height: 1.4;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5px;
+        }
+        
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 18px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-top: 3px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+            min-width: 0; /* Prevent flex overflow */
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: var(--dark);
+            margin: 0 0 20px 0;
+            font-size: 1.8em;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            grid-column: 1/-1;
+            padding: 5px 0;
+        }
+        
+        h2 {
+            color: var(--secondary);
+            margin: 0 0 12px 0;
+            font-size: 1.1em;
+            font-weight: 600;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(67, 97, 238, 0.2);
+        }
+        
+        .formula {
+            background-color: rgba(248, 249, 250, 0.7);
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            overflow-x: auto;
+            border: 1px solid rgba(0,0,0,0.04);
+            min-width: 0; /* Prevent flex overflow */
+        }
+        
+        .formula-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--primary);
+            font-size: 0.85em;
+            letter-spacing: 0.3px;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+            .container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .card {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.6em;
+                margin-bottom: 15px;
+            }
+        }
+        
+        /* MathJax adjustments */
+        mjx-container[jax="CHTML"][display="true"] {
+            margin: 8px 0 !important;
+            overflow: visible !important;
+        }
+        
+        /* Ensure formulas don't cause horizontal scroll */
+        .formula mjx-container {
+            display: inline-block !important;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+        
+        /* No scrollbars needed */
+        body {
+            overflow-y: auto;
+        }
+        .formula {
+            -webkit-overflow-scrolling: touch;
+        }
+        .formula::-webkit-scrollbar {
+            height: 4px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Mathematical Foundations of Cell Type Gradients</h1>
+
+        <!-- Vision Transformer -->
+        <div class="card">
+            <h2>Vision Transformer</h2>
+            <div class="formula">
+                <div class="formula-title">Input Image</div>
+                \[ I \in \mathbb{R}^{H \times W \times 3} \]
+            </div>
+            <div class="formula">
+                <div class="formula-title">Patch Embedding</div>
+                \[ \mathbf{P} = \text{PatchPartition}(I) \in \mathbb{R}^{N \times (p^2 \cdot 3)} \]
+                \[ \mathbf{E}_0 = [\mathbf{x}_{\text{class}}; \mathbf{P}\mathbf{W}_p] + \mathbf{E}_{\text{pos}} \]
+            </div>
+            <div class="formula">
+                <div class="formula-title">Transformer Layer</div>
+                \[ \mathbf{Z}_l = \text{LayerNorm}(\mathbf{E}_{l-1}) \]
+                \[ \mathbf{A}_l = \text{MultiHeadAttention}(\mathbf{Z}_l, \mathbf{Z}_l, \mathbf{Z}_l) \]
+                \[ \mathbf{E}_l = \mathbf{A}_l + \mathbf{E}_{l-1} \]
+            </div>
+        </div>
+
+        <!-- Vision Transformer MLP -->
+        <div class="card">
+            <h2>Transformer MLP</h2>
+            <div class="formula">
+                <div class="formula-title">MLP Layer</div>
+                \[ \mathbf{Z}'_l = \text{LayerNorm}(\mathbf{E}_l) \]
+                \[ \mathbf{F}_l = \text{MLP}(\mathbf{Z}'_l) \]
+                \[ \mathbf{E}_l = \mathbf{F}_l + \mathbf{E}_l \]
+            </div>
+            <div class="formula">
+                <div class="formula-title">Feature Extraction</div>
+                \[ \phi(I) = \mathbf{E}_L[0] \in \mathbb{R}^d \]
+            </div>
+        </div>
+
+        <!-- UMAP -->
+        <div class="card">
+            <h2>UMAP Reduction</h2>
+            <div class="formula">
+                <div class="formula-title">Local Metrics</div>
+                \[ \rho_i = \min_{j \neq i} d(\mathbf{x}_i, \mathbf{x}_j) \]
+                \[ \sigma_i : \sum_{j \neq i} \exp\left(\frac{-\max(0, d_{ij} - \rho_i)}{\sigma_i}\right) = \log_2 k \]
+            </div>
+            <div class="formula">
+                <div class="formula-title">Fuzzy Simplicial Set</div>
+                \[ w_{ij} = \exp\left(\frac{-\max(0, d_{ij} - \rho_i)}{\sigma_i}\right) \]
+            </div>
+        </div>
+
+        <!-- UMAP Optimization -->
+        <div class="card">
+            <h2>UMAP Optimization</h2>
+            <div class="formula">
+                <div class="formula-title">Low-Dimensional</div>
+                \[ \min_{\mathbf{y}} -\sum_{i \neq j} [w_{ij}\ln v_{ij} + (1-w_{ij})\ln(1-v_{ij})] \]
+                \[ v_{ij} = (1 + a\|\mathbf{y}_i-\mathbf{y}_j\|_2^{2b})^{-1} \]
+                \[ (a=1.929, b=0.7915) \]
+            </div>
+        </div>
+
+        <!-- Distance Geometry -->
+        <div class="card">
+            <h2>Distance Geometry</h2>
+            <div class="formula">
+                <div class="formula-title">Centroids</div>
+                \[ \mathbf{\mu}_c = \text{median}(\{\mathbf{y}_i | \ell_i = c\}) \]
+            </div>
+            <div class="formula">
+                <div class="formula-title">Distance Matrix</div>
+                \[ \mathbf{D} \in \mathbb{R}^{|\mathcal{C}| \times |\mathcal{C}|} \]
+                \[ D_{ij} = \|\mathbf{\mu}_i - \mathbf{\mu}_j\|_2 \]
+                \[ \mathbf{D}' = \frac{\mathbf{D} - \min(\mathbf{D})}{\max(\mathbf{D}) - \min(\mathbf{D})} \]
+            </div>
+        </div>
+
+        <!-- Cluster Analysis -->
+        <div class="card">
+            <h2>Cluster Analysis</h2>
+            <div class="formula">
+                <div class="formula-title">K-Means</div>
+                \[ \min_{\{\mathcal{C}_j\}} \sum_{j=1}^k \sum_{\mathbf{y}_i \in \mathcal{C}_j} \|\mathbf{y}_i - \mathbf{\mu}_j\|_2^2 \]
+                \[ \mathbf{\mu}_j = \frac{1}{|\mathcal{C}_j|} \sum_{\mathbf{y}_i \in \mathcal{C}_j} \mathbf{y}_i \]
+            </div>
+            <div class="formula">
+                <div class="formula-title">Convex Hull</div>
+                \[ \text{Hull}(\mathcal{C}) = \text{Conv}(\{\mathbf{y}_i | \mathbf{y}_i \in \mathcal{C}\}) \]
+            </div>
+        </div>
+
+        <!-- Confidence Metrics -->
+        <div class="card">
+            <h2>Confidence Metrics</h2>
+            <div class="formula">
+                <div class="formula-title">Assignment</div>
+                \[ \text{confidence} = \frac{\max(\mathbf{n})}{\|\mathbf{n}\|_1} \]
+            </div>
+            <div class="formula">
+                <div class="formula-title">Selection</div>
+                \[ \mathcal{S}_c = \{\mathbf{y}_i | \ell_i = c, \text{confidence}_i \geq \theta\} \]
+                \[ \theta = \text{Quantile}_{1-\alpha}(\{\text{confidence}_i | \ell_i = c\}) \]
+            </div>
+        </div>
+
+        <!-- Kernel Density -->
+        <div class="card">
+            <h2>Kernel Density</h2>
+            <div class="formula">
+                <div class="formula-title">Estimation</div>
+                \[ \hat{f}_c(\mathbf{y}) = \frac{1}{|\mathcal{C}|h^2} \sum K\left(\frac{\|\mathbf{y}-\mathbf{y}_i\|_2}{h}\right) \]
+                \[ K(u) = \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}u^2} \]
+            </div>
+            <div class="formula">
+                <div class="formula-title">Color Mapping</div>
+                \[ \text{color} = \mathbf{p}_i \in [0,1]^3 \]
+            </div>
+        </div>
+    </div>
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                packages: {'[+]': ['mhchem']}
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                ignoreHtmlClass: 'tex2jax_ignore'
+            },
+            svg: {
+                fontCache: 'global'
+            },
+            chtml: {
+                scale: 0.95, /* Slightly larger than before */
+                minScale: 0.75 /* Allow scaling down if needed */
+            }
+        };
+    </script>
+</body>
+</html>
